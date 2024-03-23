@@ -1,10 +1,12 @@
 "use client";
 
+import { LinksTypes } from "@/shared/types";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import NavLink from "./navLink";
 
-const links = [
+const links: Array<LinksTypes> = [
   { url: "/", title: "Home" },
   { url: "/about", title: "About" },
   { url: "/portfolio", title: "Portfolio" },
@@ -17,19 +19,17 @@ const NavBar = () => {
   return (
     <div
       className={
-        "h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48"
+        "h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl"
       }
     >
       {/* LINKS */}
       <div className={"hidden md:flex gap-4 w-1/3"}>
-        {links.map((link) => (
-          <Link href={link.url} key={link.title} className="">
-            {link.title}
-          </Link>
+        {links.map((link: LinksTypes) => (
+          <NavLink link={link} key={link.title} />
         ))}
       </div>
       {/* LOGO */}
-      <div className={"md:hidden lg:flex w-1/3 justify-center"}>
+      <div className={"md:hidden lg:flex xl:w-1/3 xl:justify-center"}>
         <Link
           href={"/"}
           className="text-sm bg-black rounded-md p-1 font-semibold flex justify-center items-center"
@@ -83,7 +83,7 @@ const NavBar = () => {
               "absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-4xl"
             }
           >
-            {links.map((link) => (
+            {links.map((link: LinksTypes) => (
               <Link href={link.url} key={link.title}>
                 {link.title}
               </Link>
