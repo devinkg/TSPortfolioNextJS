@@ -9,13 +9,13 @@ const Home = () => {
       }
     >
       {/* IMAGE CONATINER */}
-      <div className={"h-1/2 lg:h-full w-1/2 relative"}>
+      <div className={"h-1/2 lg:h-full lg:w-1/2 relative"}>
         <Image src="/hero.png" alt="" fill className={"object-contain"} />
       </div>
       {/* TEXT CONATINER */}
       <div
         className={
-          "h-1/2 lg:h-full w-1/2 flex flex-col gap-8 items-center justify-center"
+          "h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center"
         }
       >
         {/* TITLE */}
